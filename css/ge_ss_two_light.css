@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'GESSTwoLight-Light';
+    font-style: normal;
+    font-weight: normal;
+    src: url(../fonts/GESSTwoLight-Light.eot);
+    src: url(../fonts/GESSTwoLight-Light.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/GESSTwoLight-Light.woff) format('woff'),
+    url(../fonts/GESSTwoLight-Light.ttf) format('truetype');
+}
