@@ -1,5 +1,4 @@
-<?php require_once('function.php');
-//var_dump($elements_type);
+<?php
 $htmlCode = "
 @inject('myForm','App\\MyForm()')
 
