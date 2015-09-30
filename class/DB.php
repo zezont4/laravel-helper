@@ -7,7 +7,6 @@
  * @version      0.2ab
  *
  */
-require("Log.class.php");
 class DB
 {
 	# @object, The PDO object
@@ -22,22 +21,16 @@ class DB
 	# @bool ,  Connected to the database
 	private $bConnected = false;
 
-	# @object, Object for logging exceptions
-	private $log;
-
 	# @array, The parameters of the SQL query
 	private $parameters;
 
 	/**
      * Default Constructor
-     *
-     * 1. Instantiate Log class.
      * 2. Connect to database.
      * 3. Creates the parameter array.
      */
 	public function __construct()
 	{
-		$this->log = new Log();
 		$this->Connect();
 		$this->parameters = array();
 	}
@@ -48,7 +41,7 @@ class DB
     *	1. Reads the database settings from a ini file.
     *	2. Puts  the ini content into the settings array.
     *	3. Tries to connect to the database.
-    *	4. If connection failed, exception is displayed and a log file gets created.
+    *	4. If connection failed, exception is displayed.
     */
 	private function Connect()
 	{
@@ -66,7 +59,6 @@ class DB
 			# Read settings from INI file, set UTF8
 			$this->pdo = new PDO($dsn, Config::get('user'), Config::get('pass'), array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 
-			# We can now log any exceptions on Fatal error.
 			$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 			# Disable emulation of prepared statements, use REAL prepared statements instead.
@@ -77,8 +69,6 @@ class DB
 		}
 		catch (PDOException $e)
 		{
-			# Write into log
-			echo $this->ExceptionLog($e->getMessage());
 			die();
 		}
 	}
@@ -100,7 +90,6 @@ class DB
      * 2. Prepare Query.
      * 3. Parameterize Query.
      * 4. Execute Query.
-     * 5. On exception : Write Exception into the log + SQL query.
      * 6. Reset the Parameters.
      * @param String   $query       [[Description]]
      * @param Array [$parameters = ""] [[Description]]
@@ -130,8 +119,6 @@ class DB
 		}
 		catch(PDOException $e)
 		{
-			# Write into log and display Exception
-			echo $this->ExceptionLog($e->getMessage(), $query );
 			die();
 		}
 
@@ -299,7 +286,6 @@ class DB
 		return $this->sQuery->fetchColumn();
 	}
 	/**
-     * Writes the log and returns the exception
      * @param   string   $message    [[Description]]
      * @param   [[Type]] [$sql = ""] [[Description]]
      * @returns string   string
@@ -315,20 +301,5 @@ class DB
         return $queryArray;
     }
 
-	private function ExceptionLog($message , $sql = "")
-	{
-		$exception  = 'Unhandled Exception. <br />';
-		$exception .= $message;
-		$exception .= "<br /> You can find the error back in the log.";
-
-		if(!empty($sql)) {
-			# Add the Raw SQL to the Log
-			$message .= "\r\nRaw SQL : "  . $sql;
-		}
-		# Write into log
-		$this->log->write($message);
-
-		return $exception;
-	}
 }
 ?>
