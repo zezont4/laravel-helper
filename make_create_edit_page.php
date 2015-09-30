@@ -61,9 +61,5 @@ if (Session::get(Session::get('table_name') . 'is_view') == false) {
 
 	include('pages/search.blade.php');
 
-//	include('pages/delete.php');
-//	include('pages/view.php');
 }
-
-
 include_once($StartDir . 'templates/footer.php');
