@@ -2,7 +2,9 @@
 ### Auto generate primary codes from the database table<br>
 It generate the folowing code / files:<br>
 Routes<br>
-Request<br>
+RouteServiceProvider<br>
+some artisan commands<br>
 Model<br>
+Request<br>
 Controller<br>
-Views<br>
+Views [create, edit, index, show]<br>
