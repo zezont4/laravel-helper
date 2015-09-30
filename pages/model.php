@@ -6,7 +6,7 @@ use SoftDeletes;
 use Traits\\SearchFormHelper;
 use Traits\\FlashMessageAfterSaving;
 
-protected \$table = '".Session::get('table_name')."';
+protected \$table = '".$_SESSION['table_name']."';
 
 protected \$fillable = [".$field_names."];
 

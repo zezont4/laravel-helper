@@ -2,23 +2,23 @@
 $pageTitle = 'كود الإضافة والتعديل';
 $StartDir = '';
 include_once($StartDir . 'templates/header.php');
-$checked_fields = Session::get('checked_fields');
-$db_name = Session::get('db_name');
+$checked_fields = $_SESSION['checked_fields'];
+$db_name = $_SESSION['db_name'];
 
-$table_name = Session::get('table_name');
-$edited_table_name = ucfirst(Session::get('table_name'));
+$table_name = $_SESSION['table_name'];
+$edited_table_name = ucfirst($_SESSION['table_name']);
 if (isset($_GET['edited-table-name'])) {
 	$edited_table_name = ucfirst($_GET['edited-table-name']);
 }
-$elements_type = Session::get('elements_type');
-$field_is_required = Session::get('field_is_required');
-$outputDir = Session::get('outputDir') . '/' . strtolower($edited_table_name);
-$primary_key = Session::get('primary_key');
+$elements_type = $_SESSION['elements_type'];
+$field_is_required = $_SESSION['field_is_required'];
+$outputDir = $_SESSION['outputDir'] . '/' . strtolower($edited_table_name);
+$primary_key = $_SESSION['primary_key'];
 
 recursiveRemove('output');
 
 if (!file_exists($outputDir)) {
-	@mkdir(Session::get('outputDir'));
+	@mkdir($_SESSION['outputDir']);
 	@mkdir($outputDir);
 }
 $pdo = new PDO("mysql:dbname={$db_name};host=" . Config::get('host'), Config::get('user'), Config::get('pass'), [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"]);
@@ -37,7 +37,7 @@ $all_table_fields = $dbs->fetchAll();
 	</div>
 <?php
 
-if (Session::get(Session::get('table_name') . 'is_view') == false) {
+if ($_SESSION[$_SESSION['table_name'] . 'is_view'] == false) {
 
 	include('pages/route.php');
 
