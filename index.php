@@ -1,2 +1,1 @@
-<?php
-header('Location: get_db_name.php');
+<?php header('Location: get_db_name.php');
