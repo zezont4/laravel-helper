@@ -1,5 +1,5 @@
 # Laravel helper
-### It reads the database tabe then Auto generate the folowing codes / files:
+### It reads the database table, then it generates the following codes / files:
 
 * Routes
 * RouteServiceProvider
