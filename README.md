@@ -1,7 +1,6 @@
 # Laravel helper
----
-### Auto generate primary codes from the database table
-It generate the following code / files:
+### It reads the database tabe then Auto generate the folowing codes / files:
+
 * Routes
 * RouteServiceProvider
 * some artisan commands
