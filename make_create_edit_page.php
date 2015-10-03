@@ -51,6 +51,8 @@ if ($_SESSION[$_SESSION['table_name'] . 'is_view'] == false) {
 
 	include('pages/controller.php');
 
+	include('pages/nav_menu.php');
+
 	include('pages/create.blade.php');
 
 	include('pages/edit.blade.php');
