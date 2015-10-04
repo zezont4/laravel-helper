@@ -3,8 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(-1);
 session_start();
-//$root = '/wc/';
-//$settings = parse_ini_file("config.php");
+
 
 $GLOBALS['config'] = [
 	'root_dir' => '/laravel-helper/',
@@ -18,22 +17,18 @@ spl_autoload_register(function ($class) {
 	require_once 'class/' . $class . '.php';
 });
 
-if (!function_exists("escape")) {
-	function escape($string)
-	{
-		return htmlentities($string, ENT_QUOTES, 'UTF-8');
-	}
+function escape($string)
+{
+	return htmlentities($string, ENT_QUOTES, 'UTF-8');
 }
 
-if (!function_exists("writeToFile")) {
-
-	function writeToFile($fineName, $content)
-	{
-		$myfile = fopen($fineName, "w") or die("Unable to open file!");
-		fwrite($myfile, $content);
-		fclose($myfile);
-	}
+function writeToFile($fineName, $content)
+{
+	$myfile = fopen($fineName, "w") or die("Unable to open file!");
+	fwrite($myfile, $content);
+	fclose($myfile);
 }
+
 function recursiveRemove($dir)
 {
 	$structure = glob(rtrim($dir, "/") . '/*');
@@ -43,5 +38,5 @@ function recursiveRemove($dir)
 			elseif (is_file($file)) unlink($file);
 		}
 	}
-	@rmdir($dir);
+	//	@rmdir($dir);
 }

@@ -27,11 +27,18 @@ $dbs->execute();
 $all_table_fields = $dbs->fetchAll();
 ?>
 	<div class="clearfix container-fluid">
-		<form method="get" action="">
-			<div class="col-sm-2">
-				<input name="edited-table-name" style="direction: ltr;" type="text" placeholder="اسم الجدول" class="form-control text-center" value="<?php echo $edited_table_name; ?>"></div>
-			<div class="col-sm-2 pull-left">
-				<button class="btn btn-block btn-primary" type="submit">تطبيق</button>
+		<form method="get" action="" class="form-horizontal">
+			<div class="form-group ">
+				<label for="name" class="control-label col-sm-2">أسم الـ(Model)</label>
+
+				<div class="col-sm-10">
+					<input name="edited-table-name" type="text" class="form-control" value="<?php echo $edited_table_name; ?>">
+				</div>
+			</div>
+			<div class="form-group ">
+				<div class="col-sm-offset-2 col-sm-10">
+					<input class="btn material_button btn-primary" type="submit" value="تطبيق">
+				</div>
 			</div>
 		</form>
 	</div>
@@ -44,6 +51,8 @@ if ($_SESSION[$_SESSION['table_name'] . 'is_view'] == false) {
 	include('pages/RouteServiceProvider.php');
 
 	include('pages/artisan.php');
+
+	include('pages/sql.php');
 
 	include('pages/model.php');
 
