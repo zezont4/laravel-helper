@@ -35,6 +35,32 @@ $htmlCode .= "
     @endforeach
     <tr>
 </table>
+    <div class='container-fluid'>
+        {!! $" . strtolower($edited_table_name) . "s->appends(Input::query())->render() !!}
+    </div>
+
+    @else
+        <div class='alert text-danger text-center'>
+            <h3>لا توجد نتائج مطابقة للبحث</h3>
+
+            <h3>No results founts</h3>
+        </div>
+@endif
+
+@if($" . strtolower($edited_table_name) . "s->currentPage()>=$" . strtolower($edited_table_name) . "s->lastPage())
+        @include('layouts.trashed',
+        ['trashed' => \$trashed" . $edited_table_name . "s,
+         'data' => [
+         ";
+foreach ($all_table_fields as $table_field) {
+    foreach ($checked_fields as $field_name) {
+        if (in_array($field_name, $table_field)) {
+            $htmlCode .= "\t\t'$table_field[8]' => '$field_name',\n";
+        }
+    }
+}
+$htmlCode .="]
+        ])
 @endif
 @stop
 ";?>
