@@ -1,5 +1,5 @@
 <?php $create_page = "
-@extends('layouts.master',['pageTitle' => 'إضافة'])
+@extends('layouts.master',['pageTitle' => 'بحث'])
 
 @section('content')
 
