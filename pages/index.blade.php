@@ -68,9 +68,12 @@ $htmlCode .= "]
     <?php $filePath = $outputDir . "/index.blade.php"; ?>
     <h3>
         <span class="pull-left">index.blade.php</span>
-        <span><button class="btn btn-success" onclick="selectElementContents(document.getElementById('index_code'))"
-                      unselectable="on">تحديد الكود
-            </button></span>
+        <span>
+            <button class="btn btn-success"
+                    onclick="selectElementContents(document.getElementById('index_code'))"
+                    unselectable="on">تحديد الكود
+            </button>
+        </span>
         <span><a class="btn btn-success" href="<?php echo $filePath; ?>" target="_blank">معاينة الصفحة</a></span>
     </h3>
     <pre class="language-php" data-language="language-php" style="direction: ltr">
