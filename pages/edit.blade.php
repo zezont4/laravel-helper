@@ -6,7 +6,7 @@ $edit_page = "
 
 @section('content')
 
-    {!! Form::model($".strtolower($edited_table_name).", ['route' => ['".strtolower($edited_table_name).".update', $".strtolower($edited_table_name)."->id], 'method' => 'put', 'role' => 'form', 'class' => 'form-horizontal']) !!}
+    {!! Form::model($".strtolower($edited_table_name).", ['route' => ['" . strtolower($edited_table_name) . ".update', $" . strtolower($edited_table_name) . "->id], 'method' => 'put', 'role' => 'form', 'class' => 'form-horizontal']) !!}
     @include('".strtolower($edited_table_name)."._form',['btnLabel' => 'تحديث','formType' => 'update'])
     {!! Form::close() !!}
 

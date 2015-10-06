@@ -11,14 +11,14 @@ $htmlCode = "
 foreach ($all_table_fields as $table_field) {
     foreach ($checked_fields as $field_name) {
         if (in_array($field_name, $table_field)) {
-             $htmlCode .= "{!! \$myForm->formStatic(['label' => '" . $table_field[8] . "', 'name' => '" . $field_name . "', 'value' => " . '$'.strtolower($edited_table_name).'->'.$field_name . "]) !!}\n\n";
+            $htmlCode .= "{!! \$myForm->formStatic(['label' => '" . $table_field[8] . "', 'name' => '" . $field_name . "', 'value' => " . '$' . strtolower($edited_table_name) . '->' . $field_name . "]) !!}\n\n";
         }
     }
 }
 $htmlCode .= "<hr>
     <div class='form-group '>
         <div class='col-sm-offset-3 col-sm-9'>
-            <a class='btn material_button btn-primary' href='{{route('".strtolower($edited_table_name).".edit',$".strtolower($edited_table_name)."->id)}}'>تعديل</a>
+            <a class='btn material_button btn-primary' href='{{route('" . strtolower($edited_table_name) . ".edit',$" . strtolower($edited_table_name) . "->id)}}'>تعديل</a>
         </div>
     </div>
 
@@ -32,7 +32,8 @@ $htmlCode .= "<hr>
 
     <h3>
         <span class="pull-left">show.blade.php</span>
-        <span><button class="btn btn-success" onclick="selectElementContents(document.getElementById('show_code'))" unselectable="on">تحديد الكود</span></button>
+        <span><button class="btn btn-success" onclick="selectElementContents(document.getElementById('show_code'))"
+                      unselectable="on">تحديد الكود</span></button>
         <span><a class="btn btn-success" href="<?php echo $filePath;?>" target="_blank">معاينة الصفحة</a></span>
     </h3>
     <pre class="language-php" data-language="language-php" style="direction: ltr">

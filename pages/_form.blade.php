@@ -36,8 +36,7 @@ foreach ($all_table_fields as $table_field) {
 $htmlCode .= "
 <hr>
 
-{!! \$myForm->formButton(['label' => \$btnLabel, 'class' => 'primary']) !!}
-";
+{!! \$myForm->formButton(['label' => \$btnLabel, 'class' => 'primary']) !!}";
 ?>
 <div class="clearfix col-xs-12">
     <hr>
@@ -45,7 +44,8 @@ $htmlCode .= "
 
     <h3>
         <span class="pull-left">_form.blade.php</span>
-        <span><button class="btn btn-success" onclick="selectElementContents(document.getElementById('form_code'))" unselectable="on">تحديد الكود</span></button>
+        <span><button class="btn btn-success" onclick="selectElementContents(document.getElementById('form_code'))"
+                      unselectable="on">تحديد الكود</span></button>
         <span><a class="btn btn-success" href="<?php echo $filePath;?>" target="_blank">معاينة الصفحة</a></span>
     </h3>
     <pre class="language-php" data-language="language-php" style="direction: ltr">
