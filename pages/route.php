@@ -23,9 +23,12 @@ Route::post('" . strtolower($edited_table_name) . "/{" . strtolower($edited_tabl
     <hr>
     <h3>
         <span class="pull-left">route</span>
-        <span><button class="btn btn-success" onclick="selectElementContents(document.getElementById('route_code'))"
-                      unselectable="on">تحديد الكود
-            </button></span>
+        <span>
+            <button class="btn btn-success"
+                    onclick="selectElementContents(document.getElementById('route_code'))"
+                    unselectable="on">تحديد الكود
+            </button>
+        </span>
     </h3>
 	<pre class="language-php" data-language="language-php" style="direction: ltr">
 		<code class="language-php" id="route_code">

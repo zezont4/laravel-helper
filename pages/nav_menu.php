@@ -12,9 +12,12 @@ $create_page = "
     <hr>
     <h3>
         <span class="pull-left">Navigation Menu</span>
-        <span><button class="btn btn-success" onclick="selectElementContents(document.getElementById('nav_menu'))"
-                      unselectable="on">تحديد الكود
-            </button></span>
+        <span>
+            <button class="btn btn-success"
+                    onclick="selectElementContents(document.getElementById('nav_menu'))"
+                    unselectable="on">تحديد الكود
+            </button>
+        </span>
     </h3>
 	<pre class="language-php" data-language="language-php" style="direction: ltr">
 		<code class="language-php" id="nav_menu">

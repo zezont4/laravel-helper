@@ -8,11 +8,12 @@
  <table class='table table-hover'>
     <thead>
         <tr>
-        ";
+
+";
 foreach ($all_table_fields as $table_field) {
     foreach ($checked_fields as $field_name) {
         if (in_array($field_name, $table_field)) {
-            $htmlCode .= "<th>$table_field[8]</th>\n";
+            $htmlCode .= "\t\t<th><a href=\"{{route('" . strtolower($edited_table_name) . ".index', Input::except('sort') + ['sort' => '".$field_name."']  ) }}\">$table_field[8]</a></th>\n";
         }
     }
 }
@@ -49,6 +50,7 @@ $htmlCode .= "
 
 @if($" . strtolower($edited_table_name) . "s->currentPage()>=$" . strtolower($edited_table_name) . "s->lastPage())
         @include('layouts.trashed',
+        'modelName' => '" . strtolower($edited_table_name) . "',
         ['trashed' => \$trashed" . $edited_table_name . "s,
          'data' => [
          ";
@@ -68,10 +70,12 @@ $htmlCode .= "]
     <?php $filePath = $outputDir . "/index.blade.php"; ?>
     <h3>
         <span class="pull-left">index.blade.php</span>
-        <span><button class="btn btn-success" onclick="selectElementContents(document.getElementById('index_code'))"
-                      unselectable="on">تحديد الكود
-            </button></span>
-        <span><a class="btn btn-success" href="<?php echo $filePath; ?>" target="_blank">معاينة الصفحة</a></span>
+        <span>
+            <button class="btn btn-success"
+                    onclick="selectElementContents(document.getElementById('index_code'))"
+                    unselectable="on">تحديد الكود
+            </button>
+        </span>
     </h3>
     <pre class="language-php" data-language="language-php" style="direction: ltr">
         <code class="language-php" id="index_code">

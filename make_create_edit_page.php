@@ -73,8 +73,5 @@ if ($_SESSION[$_SESSION['table_name'] . 'is_view'] == false) {
 	include('pages/_form.blade.php');
 
 	include('pages/show.blade.php');
-
-	include('pages/search.blade.php');
-
 }
 include_once($StartDir . 'templates/footer.php');

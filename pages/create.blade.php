@@ -15,10 +15,12 @@
     <?php $filePath = $outputDir . "/create.blade.php"; ?>
     <h3>
         <span class="pull-left">create.blade.php</span>
-        <span><button class="btn btn-success" onclick="selectElementContents(document.getElementById('create_code'))"
-                      unselectable="on">تحديد الكود
-            </button></span>
-        <span><a class="btn btn-success" href="<?php echo $filePath; ?>" target="_blank">معاينة الصفحة</a></span>
+        <span>
+            <button class="btn btn-success"
+                    onclick="selectElementContents(document.getElementById('create_code'))"
+                    unselectable="on">تحديد الكود
+            </button>
+        </span>
     </h3>
 <pre class="language-php" data-language="language-php" style="direction: ltr">
             <code class="language-php" id="create_code">

@@ -19,9 +19,12 @@ public \$searchableFields = [" . $field_names . "];";
     <hr>
     <h3>
         <span class="pull-left">model.php</span>
-        <span><button class="btn btn-success" onclick="selectElementContents(document.getElementById('model_code'))"
-                      unselectable="on">تحديد الكود
-            </button></span>
+        <span>
+            <button class="btn btn-success"
+                    onclick="selectElementContents(document.getElementById('model_code'))"
+                    unselectable="on">تحديد الكود
+            </button>
+        </span>
     </h3>
 	<pre class="language-php" data-language="language-php" style="direction: ltr">
 		<code class="language-php" id="model_code">

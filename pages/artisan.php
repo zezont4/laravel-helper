@@ -9,9 +9,12 @@ composer dump-autoload";
     <hr>
     <h3>
         <span class="pull-left">artisan</span>
-        <span><button class="btn btn-success" onclick="selectElementContents(document.getElementById('artisan_code'))"
-                      unselectable="on">تحديد الكود
-            </button></span>
+        <span>
+            <button class="btn btn-success"
+                    onclick="selectElementContents(document.getElementById('artisan_code'))"
+                    unselectable="on">تحديد الكود
+            </button>
+        </span>
     </h3>
 	<pre class="language-artisan" data-language="language-artisan" style="direction: ltr">
 		<code class="language-artisan" id="artisan_code">
