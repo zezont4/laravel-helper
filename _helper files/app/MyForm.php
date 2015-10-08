@@ -3,6 +3,7 @@
 namespace app;
 
 use Collective\Html\FormFacade as Form;
+use Illuminate\Support\Facades\Request;
 
 class MyForm
 {
@@ -23,6 +24,12 @@ class MyForm
 
 	public $errors = null;
 	public $width = 3;
+
+	function ifActive($routeName, $active = 'active')
+	{
+		$url = route($routeName);
+		return Request::url() == $url ? $active : '';
+	}
 
 	public function addForm_controlClass(Array $attr = null)
 	{
