@@ -15,10 +15,10 @@
         {{-- <script src="{{asset('js/jquery.1.11.1.min.js')}}"></script> --}}
 
         <!--[if lt IE 9]>
-            {{-- <script src="{{asset('js/html5shiv.min.js')}}"></script> --}}
             <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-
             <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+
+            {{-- <script src="{{asset('js/html5shiv.min.js')}}"></script> --}}
             {{-- <script src="{{asset('js/respond.min.js')}}"></script> --}}
         <![endif]-->
 
