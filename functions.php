@@ -40,5 +40,9 @@ function recursiveRemove($dir)
 			elseif (is_file($file)) unlink($file);
 		}
 	}
-	//	@rmdir($dir);
+	try {
+		@rmdir($dir);
+	} catch (Exception $e) {
+
+	}
 }
