@@ -24,6 +24,7 @@ function escape($string)
 
 function writeToFile($fineName, $content)
 {
+	$fineName = str_replace('//', '/', $fineName);
 	$myfile = fopen($fineName, "w") or die("Unable to open file!");
 	fwrite($myfile, $content);
 	fclose($myfile);
@@ -31,6 +32,7 @@ function writeToFile($fineName, $content)
 
 function recursiveRemove($dir)
 {
+	$dir = str_replace('//', '/', $dir);
 	$structure = glob(rtrim($dir, "/") . '/*');
 	if (is_array($structure)) {
 		foreach ($structure as $file) {
