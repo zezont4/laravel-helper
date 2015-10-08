@@ -37,6 +37,7 @@ $htmlCode .= "<hr>
                     onclick="selectElementContents(document.getElementById('show_code'))"
                     unselectable="on">تحديد الكود
             </button>
+
         </span>
     </h3>
     <pre class="language-php" data-language="language-php" style="direction: ltr">
