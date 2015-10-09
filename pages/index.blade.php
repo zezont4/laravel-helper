@@ -81,7 +81,7 @@ $htmlCode .= "]
         <code class="language-php" id="index_code">
             <?php
             echo escape($htmlCode);
-            writeToFile($filePath, $create_page);
+            writeToFile($filePath, $htmlCode);
             ?>
         </code>
     </pre>
