@@ -1,3 +1,4 @@
+@inject('myForm','App\MyForm()')
 <nav class="navbar navbar-default">
     <div class="container-fluid">
 
@@ -19,8 +20,8 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Clients العملاء<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li class="{{ifActive('client.create')}}"><a href="{{route('client.create')}}"> Add New Client إضافة عميل</a></li>
-                        <li class="{{ifActive('client.search')}}"><a href="{{route('client.search')}}">Search بحث</a></li>
+                        <li class="{{$myForm->ifActive('client.create')}}"><a href="{{route('client.create')}}"> Add New Client إضافة عميل</a></li>
+                        <li class="{{$myForm->ifActive('client.search')}}"><a href="{{route('client.search')}}">Search بحث</a></li>
                     </ul>
                 </li>
 
