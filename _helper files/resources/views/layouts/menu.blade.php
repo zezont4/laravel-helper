@@ -26,7 +26,7 @@
                 </li>
 
 
-                <li class="{{ifActive('contract.index')}}"><a href="{{route('contract.index')}}">Latest Devices آخر الأجهزة</a></li>
+                <li class="{{$myForm->ifActive('contract.index')}}"><a href="{{route('contract.index')}}">Latest Devices آخر الأجهزة</a></li>
 
                 @if(\Illuminate\Support\Facades\Auth::check())
                     <li><a href="{{route('auth.logout')}}">Log out تسجيل خروج</a></li>

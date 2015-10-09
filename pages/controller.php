@@ -14,6 +14,7 @@ $create_page = "
     }
 
 	public function index(\\App\\" . $edited_table_name . " \$" . strtolower($edited_table_name) . ")
+
     {
 		// DB::row is used to fix order by full_name
         //\$" . strtolower($edited_table_name) . "s = \$" . strtolower($edited_table_name) . "->search()->sort()->select('*', \DB::raw('CONCAT_WS(\" \", name1, name2, name3, name4) AS full_name'))->paginate();
@@ -38,6 +39,7 @@ $create_page = "
     }
 
     public function show(\\App\\" . $edited_table_name . " \$" . strtolower($edited_table_name) . ")
+
     {
         return View('" . strtolower($edited_table_name) . ".show', compact('" . strtolower($edited_table_name) . "'));
     }
@@ -53,6 +55,7 @@ $create_page = "
 
         return redirect()->back();
     }
+
 
     public function destroy(\\App\\" . $edited_table_name . " \$" . strtolower($edited_table_name) . ")
     {
