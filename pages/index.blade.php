@@ -51,7 +51,7 @@ $htmlCode .= "
 @if($" . strtolower($edited_table_name) . "s->currentPage()>=$" . strtolower($edited_table_name) . "s->lastPage())
         @include('layouts.trashed',[
         'modelName' => '" . strtolower($edited_table_name) . "',
-        ['trashed' => \$trashed" . $edited_table_name . "s,
+        'trashed' => \$trashed" . $edited_table_name . "s,
          'data' => [
          ";
 foreach ($all_table_fields as $table_field) {
@@ -62,7 +62,7 @@ foreach ($all_table_fields as $table_field) {
     }
 }
 $htmlCode .= "]
-        ]])
+        ])
 @endif
 @stop";?>
 <div class="clearfix col-xs-12">

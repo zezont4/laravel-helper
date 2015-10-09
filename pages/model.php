@@ -2,7 +2,7 @@
 $field_names = '\'' . implode('\', \'', $checked_fields) . '\'';
 
 $create_page = "
-use Illuminate\\Database\\Eloquent\\SoftDeletes;
+use \\Illuminate\\Database\\Eloquent\\SoftDeletes;
 use Traits\\SearchFormHelper;
 use Traits\\FlashMessageAfterSaving;
 
