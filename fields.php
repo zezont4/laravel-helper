@@ -112,10 +112,10 @@ $i = 1;
 				}
 			});
 
-			$("#sortable").sortable({
-				placeholder: "ui-state-highlight"
-			});
-			$("#sortable").disableSelection();
+//			$("#sortable").sortable({
+//				placeholder: "ui-state-highlight"
+//			});
+//			$("#sortable").disableSelection();
 		});
 	</script>
 	<!--    echo $db['Field'].' : '.$db['Comment'].'<br>';-->

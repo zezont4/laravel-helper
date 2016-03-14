@@ -10,21 +10,21 @@ trait FlashMessageAfterSaving
 		parent::boot();
 
 		static::created(function () {
-			Session::flash('success', 'Created Successfully  -  تمت الإضافة بنجاح');
+			Session::flash('success', ' تمت الإضافة بنجاح');
 		});
 
 		if (method_exists('restored', 'read')) {
 			static::restored(function () {
-				Session::flash('success', 'Restored Successfully  -  تمت الإستعادة بنجاح');
+				Session::flash('success', ' تمت الإستعادة بنجاح');
 			});
 		}
 
 		static::updated(function () {
-			Session::flash('success', 'Updated Successfully  -  تم التعديل بنجاح');
+			Session::flash('success', ' تم التعديل بنجاح');
 		});
 
 		static::deleted(function () {
-			Session::flash('success', 'Deleted Successfully  -  تم الحذف بنجاح');
+			Session::flash('success', ' تم الحذف بنجاح');
 		});
 	}
 }
