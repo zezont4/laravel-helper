@@ -13,7 +13,7 @@
 foreach ($all_table_fields as $table_field) {
     foreach ($checked_fields as $field_name) {
         if (in_array($field_name, $table_field)) {
-            $htmlCode .= "\t\t<th><a href=\"{{route('" . strtolower($edited_table_name) . ".index', Input::except('sort') + ['sort' => '".$field_name."']  ) }}\">$table_field[8]</a></th>\n";
+            $htmlCode .= "\t\t<th><a href=\"{{route('" . strtolower($edited_table_name) . ".index', Request::except('sort') + ['sort' => '".$field_name."']  ) }}\">$table_field[8]</a></th>\n";
         }
     }
 }
@@ -37,7 +37,7 @@ $htmlCode .= "
     <tr>
 </table>
     <div class='section'>
-        {!! $" . strtolower($edited_table_name) . "s->appends(Input::query())->render() !!}
+        {!! $" . strtolower($edited_table_name) . "s->appends(Request::query())->render() !!}
     </div>
 
     @else
